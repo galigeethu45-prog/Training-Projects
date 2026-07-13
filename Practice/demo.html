@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+        
+
+        }
+        h1{
+            text-align: center;
+            color: purple;
+            text-transform: uppercase;
+            text-decoration:dotted;
+            text-decoration-color: blueviolet;
+
+        }
+        .buttons{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        #Show{
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border-style: ridge;
+            border-radius: 10px 20px;
+            cursor: pointer;
+            transition: 1s ease-out;
+        }
+        #Add{
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border-style: ridge;
+            border-radius: 10px 20px;
+            cursor: pointer;
+            transition: 1s ease-out;
+
+        }
+        .more{
+            padding: 10px;
+            background-color:royalblue;
+            color: white;
+            border-style: ridge;
+            border-radius: 10px 20px;
+            cursor: pointer;
+            transition: 1s ease-out;
+        }
+        #Reset{
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border-style: ridge;
+            border-radius: 10px 20px;
+            cursor: pointer;
+            transition: 1s ease-out;
+
+        }
+        button:hover{
+            padding: 10px 20px;
+            background-color: aliceblue;
+            color: black;
+            border-radius: 20px 10px;
+            transform: scale(1.1);
+            transition: 0.7s ease-in;
+            box-shadow: rgba(black, black, black, 1);
+
+        }
+        .less{
+            padding:10px 20px;
+            background-color: crimson;
+            color: white;
+            border-style:dashed;
+            border-radius: 20px 10px;
+            cursor:pointer;
+            transition: 1s ease-out;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Cart Quantity</h1>
+    <br>
+    <div class="buttons">
+    <button title="Display cart" id="Show" onclick="console.log(`Cart Quantity: ${cartQuantity}`)">Show Quantity</button>
+    <button title="Add items" id="Add" onclick="cartQuantity=cartQuantity+1;
+            console.log(`Cart Quantity: ${cartQuantity}`)">Add to cart</button>
+    <button title="Add +2" class="more"
+    onclick="cartQuantity=cartQuantity+2
+    console.log(`Cart Quantity: ${cartQuantity}`)">+2</button>
+    <button title="Add +3" class="more"
+    onclick="cartQuantity=cartQuantity+3
+    console.log(`Cart Quantity: ${cartQuantity}`)">+3</button>
+
+    <button title="remove" class="less" onclick="removeItems(1);
+    ">Remove an item</button>
+    <button title="remove -2" class="less" onclick="removeItems(2)">
+    -2</button>
+    <button title="remove -3" class="less" onclick="removeItems(3)">
+    -3</button>
+    <br>
+
+ 
+    <button title="Reset" id="Reset" onclick="cartQuantity=0 
+    console.log(`cart was reset` + `\n` + `Cart Quantity: ${cartQuantity}`)"
+    >Reset Cart</button>
+    </div>
+    <script>
+        let cartQuantity = 0;
+        function removeItems(value){
+            if(cartQuantity >= value){
+                cartQuantity = cartQuantity - value;
+                console.log(`Cart Quantity: ${cartQuantity}`);
+            }else{
+                console.log(`You cannot remove ${value} items from the cart because the cart only has ${cartQuantity} items.`);
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>
